@@ -26,6 +26,13 @@ public class shoppingCartTest {
   }
 
   @Test
+  public void testAddItems() {
+    Product test_product = new Product("item1", 10.99);
+    shoppingCart.addItem(test_product);
+    assertEquals(1, shoppingCart.getItemCount());
+  }
+
+  @Test
   public void removeItemNotFound() throws ProductNotFoundException{
     Product unreal = new Product("Golden Ticket", 1.99);
     assertThrows(ProductNotFoundException.class, ()-> shoppingCart.removeItem(unreal));
