@@ -30,4 +30,10 @@ public class shoppingCartTest {
     Product unreal = new Product("Golden Ticket", 1.99);
     assertThrows(ProductNotFoundException.class, ()-> shoppingCart.removeItem(unreal));
   }
+  
+  public void isCartEmpty() {
+    shoppingCart.empty();
+    assertEquals(0, shoppingCart.getItemCount(), 0.0001);
+  }
 }
+
