@@ -32,12 +32,12 @@ public class shoppingCartTest {
   }
 
   @Test
-
   public void isCartEmpty() {
     shoppingCart.empty();
     assertEquals(0, shoppingCart.getItemCount(), 0.0001);
   }
 
+  @Test
   public void AddItemUpdateBalance() throws ProductNotFoundException{
     Product unreal = new Product("Golden Ticket", 1.99);
     double oldBalance = shoppingCart.getBalance();
