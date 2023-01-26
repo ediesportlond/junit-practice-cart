@@ -35,5 +35,13 @@ public class shoppingCartTest {
     shoppingCart.empty();
     assertEquals(0, shoppingCart.getItemCount(), 0.0001);
   }
+
+  public void AddItemUpdateBalance() throws ProductNotFoundException{
+    Product unreal = new Product("Golden Ticket", 1.99);
+    double oldBalance = shoppingCart.getBalance();
+    shoppingCart.addItem(unreal);
+    double newBalance = shoppingCart.getBalance();
+    assertEquals(newBalance,( oldBalance + unreal.getPrice()));
+  }
 }
 
